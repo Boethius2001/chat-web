@@ -1,10 +1,30 @@
-[
-    {
-        "username":"Heraclius",
-        "text":"hello how are you"
-    },
-    {
-        "username":"Marcus",
-        "text":"Have been better"
-    }
-]
+{
+    "chats":[
+        {
+            "chat_id":"1010",
+            "chat_messages":[
+                {
+                    "username":"Heraclius",
+                    "text":"hello how are you"
+                },
+                {
+                    "username":"Marcus",
+                    "text":"Have been better"
+                }
+            ]
+        },
+        {
+            "chat_id":"2020",
+            "chat_messages":[
+                {
+                    "username":"Sartre",
+                    "text":"Crabs are chasing me"
+                },
+                {
+                    "username":"Dostoyevski",
+                    "text":"yeah I feel you"
+                }
+            ]
+        }     
+    ]
+}
