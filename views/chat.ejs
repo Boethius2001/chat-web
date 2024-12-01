@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is the chat page</h1>
+    <% for(let cd of chat_data){%>
+        <p><b><%= cd.username%> :</b> <%= cd.text%></p>
+    <% }%>
+
+    <form action="/chat", method="post">
+        <label for="username">username</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="text">text</label>
+        <input type="text", name="text" id="text">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
