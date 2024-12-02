@@ -16,21 +16,32 @@ app.get('/', (req, res)=>{
     res.render('menu');
 });
 
-app.get('/chat/:id', (req, res)=>{
-    const {id} = req.params;
+//come later
+app.post('/', (req, res)=>{
+    console.log(req.body);
+    res.redirect('/');
+})
+
+app.get('/chat/:username/:id', (req, res)=>{
+    const {id, username} = req.params;
     const required_chat = chat_data.chats.find(chat => chat.chat_id === id );
+    
     res.render(`chat`, {
         chat_data : required_chat.chat_messages,
-        chat_id : id
+        chat_id : id,
+        username : username
     });
 });
 
-app.post('/chat/:id', (req, res)=>{
-    const {id} = req.params;
+app.post('/chat/:username/:id', (req, res)=>{
+    const {id, username} = req.params;
     const new_data = req.body;
     const required_chat = chat_data.chats.find(chat => chat.chat_id === id );
+
+    req.body.username = username;
     required_chat.chat_messages.push(new_data);
-    res.redirect(`/chat/${id}`);
+
+    res.redirect(`/chat/${username}/${id}`);
 });
 
 app.listen(PORT, ()=>{

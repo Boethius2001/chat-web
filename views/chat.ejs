@@ -11,13 +11,15 @@
     <main id="chat-main">
         <h1>this is the chat page</h1>
         <% for(let cd of chat_data){%>
-            <p><b><%= cd.username%> :</b> <%= cd.text%></p>
+            <p><b><%= cd.username %> :</b> <%= cd.text%></p>
         <% }%>
     
-        <form action="/chat/<%=chat_id%>", method="post">
+        <form action="/chat/<%=username%>/<%=chat_id%>", method="post">
+            <!--
             <label for="username">username</label>
             <input type="text" name="username" id="username">
             <br>
+            -->
             <label for="text">text</label>
             <input type="text", name="text" id="text">
             <button>Submit</button>
