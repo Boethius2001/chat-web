@@ -9,7 +9,7 @@
 </head>
 <body>
     <main id="chat-main">
-        <h1>this is the chat page</h1>
+        <h2>Chat ID : <%= chat_id %></h2>
         <% for(let cd of chat_data){%>
             <p><b><%= cd.username %> :</b> <%= cd.text%></p>
         <% }%>
