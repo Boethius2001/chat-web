@@ -1,4 +1,20 @@
-#chat-main {
+body {
+    background-color: #2b2d31;
+    color: whitesmoke;
+    margin-top: 50px;
+}
+body main {
     text-align: center;
     font-size: 2em;
+}
+.user-text-input {
+    font-size: 100%;
+    text-align: center;
+    margin: 25px;
+}
+.text-button {
+    font-size: 100%;
+}
+.text-button:hover {
+    cursor: pointer;
 }

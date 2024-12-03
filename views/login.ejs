@@ -3,15 +3,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <main>
         <div>
             <h2>Join</h2>
             <form action="/chat/<%=username%>" method="post">
-                <label for="chatid">Chat id</label>
-                <input type="text" name="chatid", id="chatid">
-                <button>Join</button>
+                <label for="chatid">Chat ID</label>
+                <input type="text" name="chatid", id="chatid" class="user-text-input">
+                <button class="text-button">Join</button>
             </form>           
         </div>
     </main>

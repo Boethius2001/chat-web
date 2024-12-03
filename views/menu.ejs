@@ -1,17 +1,11 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-</head>
+<%- include('partials/head.ejs')%>
 <body>
-    <h1>This is the main page</h1>
     <main>
         <h2>Enter your username</h2>
         <form action="/" method="post">
-            <label for="username">username</label>
-            <input type="text" name="username" id="username">
-            <button>submit</button>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="user-text-input">
+            <button class="text-button">submit</button>
         </form>
     </main>
 </body>

@@ -1,12 +1,4 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="/styles/style.css">
-
-</head>
+<%- include('partials/head.ejs')%>
 <body>
     <main id="chat-main">
         <h2>Chat ID : <%= chat_id %></h2>
@@ -15,14 +7,9 @@
         <% }%>
     
         <form action="/chat/<%=username%>/<%=chat_id%>", method="post">
-            <!--
-            <label for="username">username</label>
-            <input type="text" name="username" id="username">
-            <br>
-            -->
-            <label for="text">text</label>
-            <input type="text", name="text" id="text">
-            <button>Submit</button>
+            <label for="text">Text</label>
+            <input type="text", name="text" id="text" class="user-text-input">
+            <button class="text-button">Submit</button>
         </form>
     </main>
 
