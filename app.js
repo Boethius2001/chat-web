@@ -8,7 +8,6 @@ const app = express();
 const PORT = 3000;
 const ID_size = 6;
 
-
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended : true}));
@@ -54,7 +53,6 @@ app.post('/chat/:username/:id', (req, res)=>{
     const {id, username} = req.params;
     const new_data = req.body;
     const required_chat = chat_data.chats.find(chat => chat.chat_id === id );
-    //console.log('Request sent from a user');
     req.body.username = username;
     required_chat.chat_messages.push(new_data);
 
@@ -66,5 +64,5 @@ app.get('/*', (req, res)=>{
 });
 
 app.listen(PORT, ()=>{
-    console.log('listening on PORT 3000...')
+    console.log(`listening on PORT http://localhost:${PORT}/`);
 });
