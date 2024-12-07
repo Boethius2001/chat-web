@@ -12,9 +12,33 @@ body main {
     text-align: center;
     margin: 25px;
 }
+.chat-section {
+    position: fixed;
+    top: 85%;
+    left: 35%; 
+}
+.user-chat-input {
+    font-size: 100%;
+    text-align: center;    
+}
 .text-button {
     font-size: 100%;
 }
 .text-button:hover {
     cursor: pointer;
+}
+#chat-box{
+    margin: auto;
+
+    border: solid black 5px;
+    border-radius: 10px;
+    
+    background-color: whitesmoke;
+    color: black;
+
+    width: 700px;
+    height: 600px;
+
+    overflow: scroll;
+    overflow-x: hidden;
 }

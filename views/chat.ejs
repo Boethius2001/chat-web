@@ -2,16 +2,18 @@
 <body>
     <main id="chat-main">
         <h2>Chat ID : <%= chat_id %></h2>
-        <% for(let cd of chat_data){%>
-            <p><b><%= cd.username %> :</b> <%= cd.text%></p>
-        <% }%>
-    
-        <form action="/chat/<%=username%>/<%=chat_id%>", method="post">
-            <label for="text">Text</label>
-            <input type="text", name="text" id="text" class="user-text-input">
-            <button class="text-button">Submit</button>
-        </form>
+        <div id="chat-box">
+            <% for(let cd of chat_data){%>
+                <p><b><%= cd.username %> :</b> <%= cd.text%></p>
+            <% }%>
+        </div>
+        <div class="chat-section">
+            <form action="/chat/<%=username%>/<%=chat_id%>", method="post">
+                <label for="text">Text</label>
+                <input type="text", name="text" id="text" class="user-chat-input">
+                <button class="text-button">Submit</button>
+            </form>
+        </div>
     </main>
-
 </body>
 </html>
