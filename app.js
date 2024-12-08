@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
 const chat_data = require('./src/data.json');
 const {rand_id} = require('./src/idgen.js');
@@ -8,12 +9,17 @@ const app = express();
 const PORT = 3000;
 const ID_size = 6;
 
+const db_name = "chatdb";
+const URI = `mongodb://localhost/${db_name}`;
+
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname,'views')));
 app.use('/styles',express.static(path.join(__dirname,'styles')));
+
+mongoose.connect(URI);
 
 app.get('/', (req, res)=>{
     res.render('menu');
