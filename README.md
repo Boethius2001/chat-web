@@ -14,3 +14,14 @@ To set up the project locally, follow these steps:
    ```bash
    git clone https://github.com/Boethius2001/chat-web.git
    cd chat-web
+
+2. install dependencies:
+   ```bash
+   npm install
+
+3. run:
+   ```bash
+   node app.js
+if you are using nodemon
+   ```bash
+   npm run devStart
