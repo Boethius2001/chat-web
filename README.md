@@ -22,6 +22,8 @@ To set up the project locally, follow these steps:
 3. run:
    ```bash
    node app.js
-if you are using nodemon
+   ```
+   if you are using nodemon
+   ```
    ```bash
    npm run devStart
