@@ -48,14 +48,17 @@ app.post('/chat/:username', (req, res)=>{
     let {chatid} = req.body;
     if(chatid.length === 0){
         chatid = rand_id(ID_size);
+        create_chat(chatid, []);
     }
     chats.findOne({chat_id : {$ne:chatid}}).then(chat=>{
-        create_chat(chatid, []);
+        //create_chat(chatid, []);
+        res.redirect(`/chat/${username}/${chatid}`);
     }).catch((err)=>{
         console.error(err);
     });
 
-    res.redirect(`/chat/${username}/${chatid}`);
+    //res.redirect(`/chat/${username}/${chatid}`);
+
 })
 
 app.get('/chat/:username/:id', (req, res)=>{
