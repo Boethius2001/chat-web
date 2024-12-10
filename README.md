@@ -5,7 +5,6 @@
 ## Features
 - Host a chat session with a unique Chat ID.
 - Join existing chat sessions with ease.
-- Real-time messaging on the web.
 
 ## Installation
 To set up the project locally, follow these steps:
