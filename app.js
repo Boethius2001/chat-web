@@ -12,7 +12,6 @@ const db_name = "chatdb";
 const URI = `mongodb://localhost/${db_name}`;
 
 app.set('view engine', 'ejs');
-
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname,'views')));
@@ -23,7 +22,7 @@ mongoose.connect(URI);
 async function create_chat(Chat_ID, chat_messages){
     const chat = chats.create({
         chat_id : Chat_ID,
-        chat_messages : chat_messages //change this
+        chat_messages : chat_messages
     });
     console.log("chat created");
 }
@@ -42,7 +41,6 @@ app.get('/chat/:username', (req, res)=>{
     res.render('login', { username : username});
 })
 
-// Double host bug FIX IT!!!
 app.post('/chat/:username', (req, res)=>{
     const {username} = req.params;
     let {chatid} = req.body;
@@ -51,14 +49,10 @@ app.post('/chat/:username', (req, res)=>{
         create_chat(chatid, []);
     }
     chats.findOne({chat_id : {$ne:chatid}}).then(chat=>{
-        //create_chat(chatid, []);
         res.redirect(`/chat/${username}/${chatid}`);
     }).catch((err)=>{
         console.error(err);
     });
-
-    //res.redirect(`/chat/${username}/${chatid}`);
-
 })
 
 app.get('/chat/:username/:id', (req, res)=>{
